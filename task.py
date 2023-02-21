@@ -1,5 +1,4 @@
 def conv_endian(num, endian='big'):
-    '''Converts integer to hexadecimal.'''
     hex = len_str(dec_to_hex(num))
     if endian == 'big':
         out = ' '.join(hex[i:i + 2] for i in range(0, len(hex), 2))
@@ -10,8 +9,8 @@ def conv_endian(num, endian='big'):
     else:
         return None
 
+
 def dec_to_hex(number):
-    '''Converts decimal to hexadecimal.'''
     number = abs(number)
     hexDecNum = ['0'] * 100
     i = 0
@@ -57,15 +56,15 @@ def dec_to_hex(number):
         j = j - 1
     return output
 
+
 def len_str(strng):
-    '''Measures length of string.'''
     if len(strng) % 2 == 1:
         strng = '0' + strng
         return strng
     return strng
 
+
 def sign_check(number, strng):
-    '''Checks negative sign.'''
     if (number) < 0:
         strng = '-' + strng
         return strng
