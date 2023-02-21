@@ -12,49 +12,17 @@ def conv_endian(num, endian='big'):
 
 def dec_to_hex(number):
     number = abs(number)
-    hexDecNum = ['0'] * 100
-    i = 0
-    while number != 0:
-        temp = 0
-        temp = number % 16
-        if temp == 1:
-            hexDecNum[i] = '1'
-        elif temp == 2:
-            hexDecNum[i] = '2'
-        elif temp == 3:
-            hexDecNum[i] = '3'
-        elif temp == 4:
-            hexDecNum[i] = '4'
-        elif temp == 5:
-            hexDecNum[i] = '5'
-        elif temp == 6:
-            hexDecNum[i] = '6'
-        elif temp == 7:
-            hexDecNum[i] = '7'
-        elif temp == 8:
-            hexDecNum[i] = '8'
-        elif temp == 9:
-            hexDecNum[i] = '9'
-        elif temp == 10:
-            hexDecNum[i] = 'A'
-        elif temp == 11:
-            hexDecNum[i] = 'B'
-        elif temp == 12:
-            hexDecNum[i] = 'C'
-        elif temp == 13:
-            hexDecNum[i] = 'D'
-        elif temp == 14:
-            hexDecNum[i] = 'E'
-        elif temp == 15:
-            hexDecNum[i] = 'F'
-        i = i + 1
+    table = {0: '0', 1: '1', 2: '2', 3: '3', 4: '4',
+            5: '5', 6: '6', 7: '7',
+            8: '8', 9: '9', 10: 'A', 11: 'B', 12: 'C',
+            13: 'D', 14: 'E', 15: 'F'}
+    number = abs(number)
+    hexdec = ''
+    while number > 0:
+        remainder = number % 16
+        hexdec = table[remainder] + hexdec
         number = number // 16
-    output = ''
-    j = i - 1
-    while j >= 0:
-        output = output + hexDecNum[j]
-        j = j - 1
-    return output
+    return hexdec
 
 
 def len_str(strng):
