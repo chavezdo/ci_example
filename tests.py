@@ -35,7 +35,7 @@ class TestTask(unittest.TestCase):
         self.assertTrue(conv_endian(-2147483647, 'big'), '-7F FF FF FF')
 
     def test_11(self):
-        self.assertTrue(conv_endian (-2147483647, 'little'), '-FF FF FF 7F')
+        self.assertTrue(conv_endian(-2147483647, 'little'), '-FF FF FF 7F')
 
 
 if __name__ == '__main__':
