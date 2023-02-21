@@ -9,7 +9,6 @@ def conv_endian(num, endian='big'):
     else:
         return None
 
-
 def dec_to_hex(number):
     number = abs(number)
     table = {0: '0', 1: '1', 2: '2', 3: '3', 4: '4',
@@ -19,18 +18,15 @@ def dec_to_hex(number):
     number = abs(number)
     hexdec = ''
     while number > 0:
-        remainder = number % 16
-        hexdec = table[remainder] + hexdec
+        hexdec = table[number % 16] + hexdec
         number = number // 16
     return hexdec
-
 
 def len_str(strng):
     if len(strng) % 2 == 1:
         strng = '0' + strng
         return strng
     return strng
-
 
 def sign_check(number, strng):
     if (number) < 0:
