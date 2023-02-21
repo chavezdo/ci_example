@@ -9,11 +9,12 @@ def conv_endian(num, endian='big'):
     else:
         return None
 
+
 def dec_to_hex(number):
     number = abs(number)
     table = {0: '0', 1: '1', 2: '2', 3: '3', 4: '4',
              5: '5', 6: '6', 7: '7', 8: '8', 9: '9',
-             10: 'A', 11: 'B', 12: 'C', 13: 'D', 
+             10: 'A', 11: 'B', 12: 'C', 13: 'D',
              14:  'E', 15: 'F'}
     number = abs(number)
     hexdec = ''
@@ -22,11 +23,13 @@ def dec_to_hex(number):
         number = number // 16
     return hexdec
 
+
 def len_str(strng):
     if len(strng) % 2 == 1:
         strng = '0' + strng
         return strng
     return strng
+
 
 def sign_check(number, strng):
     if (number) < 0:
