@@ -1,4 +1,3 @@
-"""A function that converts decimal to hexadecimal using helper functions."""
 def conv_endian(num, endian='big'):
     """Converts decimal to hexadecimal with respect to fixed endian value."""
     result = len_str(dec_to_hex(num))
