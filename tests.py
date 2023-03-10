@@ -1,11 +1,26 @@
 """A testing suite for testing task.py."""
 import unittest
-from task import conv_endian
+from task import conv_endian, my_datetime
 
 
 class TestTask(unittest.TestCase):
     """Test cases for testing task.py."""
+    # ======================================================================
+    # Function 2 Tests
+    def test1(self):
+        self.assertEqual(my_datetime(0), "01-01-1970")
 
+    def test2(self):
+        self.assertEqual(my_datetime(123456789), "11-29-1973")
+
+    def test3(self):
+        self.assertEqual(my_datetime(9876543210), "12-22-2282")
+
+    def test4(self):
+        self.assertEqual(my_datetime(201653971200), "02-29-8360")
+
+    # ======================================================================
+    # Function 3 Tests
     def test_F3_1(self):
         """Test for positive value with big endian."""
         self.assertTrue(conv_endian(954786, 'big'), '0E 91 A2')
